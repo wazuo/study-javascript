@@ -1,8 +1,10 @@
 a();
 
 function a() {
-  console.log(c)
   let c = 1;
+  
+  console.log(c);
+
   d();
   function d() {
     console.log('d is called');
@@ -11,5 +13,6 @@ function a() {
 }
 
 
-console.log(b);
 const b = 0;
+
+console.log(b);
