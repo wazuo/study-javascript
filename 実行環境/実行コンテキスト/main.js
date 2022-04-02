@@ -1,7 +1,9 @@
-let a = 0;
-function b() {
-  console.log(this, arguments, a)
+function a () {
 }
-
-// console.log(a);
-b();
+function b () {
+  a();
+}
+function c () {
+  b();
+}
+c();
