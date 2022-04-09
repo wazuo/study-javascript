@@ -27,7 +27,7 @@ function fn2() {
     console.log(val); // 期待値->'val1'
 
     if(true) {
-        var val = 'val2';
+        let val = 'val2';
         console.log(val); // 期待値->'val2'
     }
 
