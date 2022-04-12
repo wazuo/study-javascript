@@ -18,9 +18,15 @@
 function calcFactory(val) {
   return {
     plus: function(target) {
-      const newVak = val + target;
+      const newVal = val + target;
       console.log(val + " + " + target + " = " + newVal)
+    },
+    minus: function(target) {
+      const newVal = val - target;
+      console.log(val + " - " + target + " = " + newVal)
     }
   };
 }
-const calc = calcFactory
+const calc = calcFactory(10);
+calc.plus(5);
+calc.minus(3);
