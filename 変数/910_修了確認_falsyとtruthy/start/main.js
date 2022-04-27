@@ -20,10 +20,12 @@
  * 以下の関数fnの初期化を適切に書き直してください。
  * ※aには0以上の整数値が渡ってくるものとします。
  */
-let a = 1;
+let a = 0;
 
 function fn(num) {
-    num = num || -1;
+    if(num === undefined || num === null) {
+        num = -1;
+    }
     console.log(num);
 }
 fn(a);
@@ -39,3 +41,10 @@ fn(a);
  * greeting("Bob"); -> 出力結果："hello, Bob"
  *
  */
+
+function greeting(name, hi) {
+    hi = hi || 'hello';
+    console.log(`${hi},${name}`);
+}
+greeting("Bob", "");
+greeting("Bob");
