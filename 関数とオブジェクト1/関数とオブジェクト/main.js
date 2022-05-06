@@ -1,12 +1,19 @@
-function a() {
-    console.log('hello');
+function hello(name) {
+    console.log('hello ' + name);
 }
 
-a.prop = 0;
-a.method = function() {
-    console.log('method');
+function bye() {
+    console.log('bye');
 }
 
-a();
-a.method();
-console.log(a.prop)
+function fn(cb) {
+    cb('Tom');
+}
+
+fn(hello);
+fn(bye);
+fn(function(name) {
+    console.log('hello ' + name);
+})
+
+setTimeout(hello, 2000);
