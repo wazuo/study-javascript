@@ -1,8 +1,19 @@
-function a(name) {
-  return 'hello ' + name;
+window.name = 'John'
+
+
+const person = {
+  name: 'Tom',
+  hello() {
+    console.log('Hello ' + this.name);
+    const a = () => console.log('Bye ' +this.name);
+    a();
+  }
+}
+// person.hello();
+
+function b() {
+  const a = () => console.log('Bye '+ this.name);
+  a();
 }
 
-const b = () => {
-  return 'hello';
-}
-console.log(b('Tom', 'Bob'))
+b();
