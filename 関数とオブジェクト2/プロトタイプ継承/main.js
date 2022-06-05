@@ -3,11 +3,27 @@ function Person(name, age) {
   this.age = age;
 }
 
-Object.prototype.hello = function() {
+Person.prototype.hello = function() {
   console.log('hello ' + this.name);
 }
 
-const bob = new Person('Bob, 18');
-const result = bob.hasOwnProperty('hello')
-console.log(result)
-console.log('hasOwnProperty' in bob);
+function Japanese(name, age, gender) {
+  Person.call(this, name, age);
+  this.gender = gender;
+}
+
+Japanese.prototype = Object.create(Person.prototype);
+
+Japanese.prototype.hello = function() {
+  console.log('Konnichiwa ' + this.name);
+}
+
+Japanese.prototype.bye = function() {
+  console.log('Sayonara ' + this.name);
+}
+
+const taro = new Japanese('Taro', 23, 'Male');
+console.log(taro);
+
+taro.hello();
+taro.bye();
